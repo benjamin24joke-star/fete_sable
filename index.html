@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Fête du Sable 1996 - Périgueux, Dordogne</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #607051;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.18),
+                    rgba(0, 0, 0, 0.18)
+                ),
+                url("image.jpg");
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        a {
+            color: #0000ff;
+        }
+
+        a:visited {
+            color: #800080;
+        }
+
+        /*
+            FENÊTRE PRINCIPALE WINDOWS 95
+        */
+
+        .site-window {
+            width: 900px;
+            max-width: calc(100% - 30px);
+            margin: 28px auto;
+            background: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #404040;
+            border-bottom: 2px solid #404040;
+            box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.65);
+        }
+
+        .title-bar {
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px;
+            color: #ffffff;
+            background: #000080;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .title-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            min-width: 0;
+        }
+
+        .title-bar-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            background: #f0d24d;
+            border: 1px solid #000000;
+            color: #000000;
+            font-family: "Times New Roman", serif;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .title-bar-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 3px;
+        }
+
+        .window-control {
+            width: 21px;
+            height: 21px;
+            padding: 0;
+            background: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #404040;
+            border-bottom: 2px solid #404040;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 14px;
+            cursor: pointer;
+        }
+
+        .window-control:active {
+            border-top-color: #404040;
+            border-left-color: #404040;
+            border-right-color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
+
+        /*
+            MENUS / BARRE D'OUTILS
+        */
+
+        .menu-bar {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 3px 5px;
+            background: #c0c0c0;
+            border-bottom: 1px solid #808080;
+            font-size: 13px;
+        }
+
+        .menu-item {
+            padding: 4px 8px;
+            cursor: default;
+        }
+
+        .menu-item:hover {
+            background: #000080;
+            color: #ffffff;
+        }
+
+        .tool-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 5px;
+            padding: 7px;
+            background: #c0c0c0;
+            border-top: 1px solid #ffffff;
+            border-bottom: 2px solid #808080;
+        }
+
+        .separator {
+            width: 2px;
+            height: 28px;
+            margin: 0 3px;
+            background: #808080;
+            border-right: 1px solid #ffffff;
+        }
+
+        /*
+            BOUTONS WINDOWS 95
+        */
+
+        .button-95 {
+            min-height: 28px;
+            padding: 4px 11px;
+            background: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #404040;
+            border-bottom: 2px solid #404040;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .button-95:hover {
+            background: #d7d7d7;
+        }
+
+        .button-95:active,
+        .button-95.active {
+            border-top-color: #404040;
+            border-left-color: #404040;
+            border-right-color: #ffffff;
+            border-bottom-color: #ffffff;
+            padding-top: 6px;
+            padding-left: 12px;
+        }
+
+        .button-95:focus {
+            outline: 1px dotted #000000;
+            outline-offset: -5px;
+        }
+
+        /*
+            DOCUMENT CENTRAL
+        */
+
+        .document-area {
+            margin: 8px;
+            background: #ffffff;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        .document-ruler {
+            display: flex;
+            align-items: center;
+            height: 25px;
+            padding-left: 14px;
+            overflow: hidden;
+            background: #eeeeee;
+            border-bottom: 1px solid #808080;
+            color: #555555;
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+            letter-spacing: 6px;
+            white-space: nowrap;
+        }
+
+        .content {
+            padding: 25px 28px 34px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 17px;
+            line-height: 1.42;
+        }
+
+        .content h1,
+        .content h2,
+        .content h3 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .content h1 {
+            margin: 0 0 7px;
+            color: #000080;
+            font-size: 31px;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .content h2 {
+            margin: 32px 0 12px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #000080;
+            color: #000080;
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+
+        .content h3 {
+            margin: 0 0 8px;
+            color: #800000;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            margin: 0 0 18px;
+            color: #800000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .content p {
+            margin: 0 0 13px;
+            text-align: justify;
+        }
+
+        .small-text {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        .intro-box {
+            margin: 18px 0 23px;
+            padding: 13px;
+            background: #ffffe1;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        /*
+            ENCADRÉ ARCHIVE JOURNAL
+        */
+
+        .newspaper-frame {
+            float: right;
+            width: 235px;
+            margin: 4px 0 14px 22px;
+            padding: 5px;
+            background: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #404040;
+            border-bottom: 2px solid #404040;
+            box-shadow: 2px 2px 0 #000000;
+        }
+
+        .newspaper-frame img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid #000000;
+        }
+
+        .newspaper-caption {
+            padding: 7px 3px 2px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            line-height: 1.25;
+        }
+
+        .newspaper-caption b {
+            color: #800000;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        /*
+            INFORMATIONS RAPIDES
+        */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin: 18px 0;
+            border-top: 1px solid #404040;
+            border-left: 1px solid #404040;
+        }
+
+        .info-cell {
+            min-height: 95px;
+            padding: 11px;
+            background: #eadbbc;
+            border-right: 1px solid #404040;
+            border-bottom: 1px solid #404040;
+        }
+
+        .info-label {
+            display: block;
+            margin-bottom: 7px;
+            color: #800000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .info-value {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /*
+            BLOCS PROGRAMME
+        */
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .program-card {
+            padding: 12px;
+            background: #efefef;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #404040;
+            border-bottom: 2px solid #404040;
+            font-size: 15px;
+        }
+
+        .program-card ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+
+        .program-card li {
+            margin-bottom: 5px;
+        }
+
+        /*
+            PANNEAUX / BILLETTERIE
+        */
+
+        .panel {
+            margin: 16px 0;
+            padding: 14px;
+            background: #e7e7e7;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #404040;
+            border-bottom: 2px solid #404040;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        .ticket-table {
+            width: 100%;
+            margin: 12px 0;
+            border-collapse: collapse;
+            background: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+
+        .ticket-table th,
+        .ticket-table td {
+            padding: 8px;
+            border: 1px solid #404040;
+            text-align: left;
+        }
+
+        .ticket-table th {
+            background: #000080;
+            color: #ffffff;
+        }
+
+        .ticket-table td:last-child {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .festival-list {
+            margin: 8px 0 0 22px;
+            padding: 0;
+        }
+
+        .festival-list li {
+            margin-bottom: 6px;
+        }
+
+        /*
+            VIDÉO MAKING OF
+        */
+
+        .video-section-title {
+            margin-bottom: 5px;
+            color: #800000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .video-panel {
+            width: 100%;
+            margin: 10px 0 14px;
+            padding: 7px;
+            background: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #404040;
+            border-bottom: 2px solid #404040;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: #000000;
+            border-top: 2px solid #404040;
+            border-left: 2px solid #404040;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-caption {
+            padding: 7px 3px 1px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+
+        /*
+            BARRE D'ÉTAT
+        */
+
+        .status-bar {
+            display: flex;
+            gap: 5px;
+            padding: 4px;
+            background: #c0c0c0;
+            border-top: 1px solid #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+
+        .status-field {
+            flex: 1;
+            min-height: 19px;
+            padding: 3px 5px;
+            border-top: 1px solid #808080;
+            border-left: 1px solid #808080;
+            border-right: 1px solid #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .status-field.small {
+            flex: 0 0 105px;
+            text-align: center;
+        }
+
+        /*
+            POP-UP DE BIENVENUE
+        */
+
+        .modal-overlay {
+            position: fixed;
+            z-index: 100;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.48);
+        }
+
+        .modal {
+            width: 460px;
+            max-width: 100%;
+            background: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            box-shadow: 5px 5px 0 #000000;
+        }
+
+        .modal-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 29px;
+            padding: 4px 4px 4px 8px;
+            background: #000080;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .modal-body {
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .modal-body h2 {
+            margin: 0 0 12px;
+            font-size: 23px;
+        }
+
+        .modal-body p {
+            margin: 0 0 11px;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 19px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /*
+            VERSION MOBILE
+        */
+
+        @media (max-width: 700px) {
+            .site-window {
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                border-left: 0;
+                border-right: 0;
+                box-shadow: none;
+            }
+
+            .content {
+                padding: 19px 16px 25px;
+                font-size: 16px;
+            }
+
+            .content h1 {
+                font-size: 25px;
+            }
+
+            .tool-bar {
+                gap: 4px;
+            }
+
+            .button-95 {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+
+            .separator {
+                display: none;
+            }
+
+            .newspaper-frame {
+                float: none;
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto 18px;
+            }
+
+            .info-grid,
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .document-ruler {
+                font-size: 9px;
+            }
+
+            .status-field.small {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- POP-UP DE BIENVENUE -->
+    <div
+        class="modal-overlay"
+        id="welcomeModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+    >
+        <div class="modal">
+
+            <div class="modal-title">
+                <span id="modalTitle">
+                    fetedusable.fr -- Important Message
+                </span>
+
+                <button
+                    class="window-control"
+                    type="button"
+                    onclick="closeWelcome()"
+                    aria-label="Fermer la fenêtre"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <h2>Bienvenue à Périgueux !</h2>
+
+                <p>
+                    Vous êtes sur le site officiel de la
+                    <b>Fête du Sable</b>, en Dordogne.
+                </p>
+
+                <p>
+                    Retrouvez le programme, la billetterie,
+                    le making-of, les archives et toutes les
+                    informations sur le festival.
+                </p>
+
+                <p class="small-text">
+                    Conseil : utilisez les boutons de la barre
+                    d'outils pour parcourir le site.
+                </p>
+
+                <div class="modal-actions">
+                    <button
+                        class="button-95"
+                        type="button"
+                        onclick="closeWelcome()"
+                    >
+                        Entrer
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FENÊTRE PRINCIPALE -->
+    <div class="site-window" id="mainWindow">
+
+        <!-- Barre de titre -->
+        <header class="title-bar">
+
+            <div class="title-bar-left">
+                <span class="title-bar-icon">S</span>
+
+                <span class="title-bar-text">
+                    Fête du Sable 1996 - Périgueux, Dordogne
+                </span>
+            </div>
+
+            <div class="window-controls">
+                <button
+                    class="window-control"
+                    type="button"
+                    aria-label="Réduire"
+                >
+                    _
+                </button>
+
+                <button
+                    class="window-control"
+                    type="button"
+                    aria-label="Agrandir"
+                >
+                    □
+                </button>
+
+                <button
+                    class="window-control"
+                    type="button"
+                    onclick="closeWelcome()"
+                    aria-label="Fermer"
+                >
+                    ×
+                </button>
+            </div>
+
+        </header>
+
+        <!-- Menu décoratif style Word 95 -->
+        <nav class="menu-bar" aria-label="Menu principal">
+            <span class="menu-item">Fichier</span>
+            <span class="menu-item">Édition</span>
+            <span class="menu-item">Affichage</span>
+            <span class="menu-item">Insertion</span>
+            <span class="menu-item">Format</span>
+            <span class="menu-item">Outils</span>
+            <span class="menu-item">Festival</span>
+            <span class="menu-item">?</span>
+        </nav>
+
+        <!-- Navigation interne -->
+        <nav class="tool-bar" aria-label="Navigation du festival">
+
+            <button
+                class="button-95 active"
+                type="button"
+                onclick="goToSection('festival', this)"
+            >
+                Le festival
+            </button>
+
+            <button
+                class="button-95"
+                type="button"
+                onclick="goToSection('programme', this)"
+            >
+                Programme
+            </button>
+
+            <button
+                class="button-95"
+                type="button"
+                onclick="goToSection('billetterie', this)"
+            >
+                Billetterie
+            </button>
+
+            <button
+                class="button-95"
+                type="button"
+                onclick="goToSection('video', this)"
+            >
+                Vidéo
+            </button>
+
+            <button
+                class="button-95"
+                type="button"
+                onclick="goToSection('benevoles', this)"
+            >
+                Bénévoles
+            </button>
+
+            <div class="separator"></div>
+
+            <button
+                class="button-95"
+                type="button"
+                onclick="openWelcome()"
+            >
+                À propos
+            </button>
+
+        </nav>
+
+        <!-- DOCUMENT -->
+        <main class="document-area">
+
+            <div class="document-ruler">
+                0----1----2----3----4----5----6----7----8----9----10----11----12
+            </div>
+
+            <article class="content">
+
+                <!-- LE FESTIVAL -->
+                <section id="festival">
+
+                    <h1>Bienvenue à la Fête du Sable</h1>
+
+                    <p class="subtitle">
+                        Le grand rendez-vous populaire de Périgueux,
+                        en Dordogne, du 14 au 16 juillet 1996.
+                    </p>
+
+                    <div class="intro-box">
+                        <b>INFORMATION :</b>
+                        La Fête du Sable ouvre ses portes dans
+                        <b>104 jours</b>. Camping, musique, repas,
+                        animations et grande finale sont au programme.
+                    </div>
+
+                    <!-- Archive du journal -->
+                    <aside class="newspaper-frame">
+
+                        <a
+                            href="courrier-de-mouette.jpg"
+                            target="_blank"
+                            title="Ouvrir l'archive en grand"
+                        >
+                            <img
+                                src="courrier-de-mouette.jpg"
+                                alt="Une du Courrier de Mouette sur la Fête du Sable"
+                            >
+                        </a>
+
+                        <div class="newspaper-caption">
+                            <b>ARCHIVES DU FESTIVAL</b>
+                            <br><br>
+                            Une des premières éditions racontée
+                            par <i>Le Courrier de Mouette</i>.
+                            Cliquez sur l'image pour l'agrandir.
+                        </div>
+
+                    </aside>
+
+                    <p>
+                        Vous consultez la page officielle de la
+                        <b>Fête du Sable</b>, le grand rendez-vous
+                        estival de Périgueux. Pendant trois jours,
+                        les habitants de Dordogne, les campeurs,
+                        les familles et les curieux se retrouvent
+                        pour célébrer la musique, les traditions locales
+                        et les concours les moins raisonnables du département.
+                    </p>
+
+                    <p>
+                        Le festival est né d'une idée simple :
+                        réunir tout le monde autour d'un week-end populaire.
+                        On vient pour les concerts, les repas,
+                        la buvette, le camping et les jeux.
+                        On reste pour raconter, le lundi suivant,
+                        ce qui s'est réellement passé au bord de l'Isle.
+                    </p>
+
+                    <p>
+                        Les premières éditions étaient déjà racontées
+                        dans la presse locale. Ce qui n'était au départ
+                        qu'une fête de quartier est devenu un rendez-vous
+                        incontournable de l'été périgourdin, sans perdre
+                        son esprit : une organisation bénévole, une ambiance
+                        de village et beaucoup trop de sable pour une ville
+                        traversée par une rivière.
+                    </p>
+
+                    <p>
+                        L'événement principal du week-end est le
+                        <b>Championnat du Regard de Sable</b> :
+                        une épreuve fictive, scénique et encadrée,
+                        pendant laquelle les concurrents doivent conserver
+                        leur concentration face à une tempête simulée avec
+                        lumières, ventilateurs et confettis biodégradables.
+                    </p>
+
+                    <p>
+                        Le dernier concurrent à rester concentré reçoit
+                        le <b>Trophée du Grain d'Or</b> et remporte son poids
+                        symbolique en sable. Heureusement, les sacs sont
+                        remis dans des proportions compatibles avec le coffre
+                        d'une voiture familiale.
+                    </p>
+
+                    <div class="clear"></div>
+
+                     <!-- VIDÉO -->
+                <section id="video">
+
+                    <h2>Vidéo</h2>
+
+                    <p class="video-section-title">
+                        Making off Fête du Sable
+                    </p>
+
+                    <div class="video-panel">
+
+                        <div class="video-container">
+                            <iframe
+                                id="makingOfVideo"
+                                src="https://www.youtube-nocookie.com/embed/aMlKQnqrpTE?rel=0&modestbranding=1"
+                                title="Making off Fête du Sable"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+
+                        <div class="video-caption">
+                            Film de préparation de la Fête du Sable.
+                            Utilisez les commandes du lecteur pour lancer,
+                            mettre en pause ou régler le volume.
+                        </div>
+
+                    </div>
+
+                </section>
+
+                    <h2>Les informations essentielles</h2>
+
+                    <div class="info-grid">
+
+                        <div class="info-cell">
+                            <span class="info-label">ÉVÉNEMENT</span>
+                            <span class="info-value">
+                                Fête du Sable
+                            </span>
+                        </div>
+
+                        <div class="info-cell">
+                            <span class="info-label">LIEU</span>
+                            <span class="info-value">
+                                Périgueux (24)
+                            </span>
+                        </div>
+
+                        <div class="info-cell">
+                            <span class="info-label">DATES</span>
+                            <span class="info-value">
+                                14 - 16 juillet
+                            </span>
+                        </div>
+
+                        <div class="info-cell">
+                            <span class="info-label">PUBLIC</span>
+                            <span class="info-value">
+                                Tous publics
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="panel">
+                        <h3>Le mot du comité</h3>
+
+                        La Fête du Sable, c'est trois jours de musique,
+                        de retrouvailles et de traditions inventées avec
+                        le plus grand sérieux. Venez avec de bonnes chaussures,
+                        un chapeau, une tente et l'envie de participer.
+                    </div>
+
+                </section>
+
+                <!-- PROGRAMME -->
+                <section id="programme">
+
+                    <h2>Programme du week-end</h2>
+
+                    <p>
+                        Les horaires sont donnés à titre indicatif.
+                        Les retards, les changements de scène et les annonces
+                        improvisées au micro font partie intégrante
+                        de l'expérience festival.
+                    </p>
+
+                    <div class="program-grid">
+
+                        <div class="program-card">
+                            <h3>Vendredi 14 juillet</h3>
+
+                            <ul>
+                                <li>17h00 : ouverture du camping</li>
+                                <li>18h30 : inauguration du village</li>
+                                <li>20h00 : repas populaire</li>
+                                <li>21h30 : concert d'ouverture</li>
+                                <li>23h45 : bal sous le chapiteau</li>
+                            </ul>
+                        </div>
+
+                        <div class="program-card">
+                            <h3>Samedi 15 juillet</h3>
+
+                            <ul>
+                                <li>10h00 : marché local</li>
+                                <li>11h30 : concours de pétanque</li>
+                                <li>15h00 : jeux du sable</li>
+                                <li>18h00 : qualifications du Regard</li>
+                                <li>21h00 : grande soirée concert</li>
+                            </ul>
+                        </div>
+
+                        <div class="program-card">
+                            <h3>Dimanche 16 juillet</h3>
+
+                            <ul>
+                                <li>10h30 : réveil du camping</li>
+                                <li>12h00 : repas de clôture</li>
+                                <li>15h00 : finale du championnat</li>
+                                <li>17h30 : remise des trophées</li>
+                                <li>22h30 : feu d'artifice</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- BILLETTERIE -->
+                <section id="billetterie">
+
+                    <h2>Billetterie</h2>
+
+                    <div class="panel">
+
+                        <p>
+                            La billetterie officielle de la Fête du Sable
+                            est ouverte. Les billets donnent accès au site,
+                            aux concerts et aux animations.
+                            Le camping est disponible en supplément.
+                        </p>
+
+                        <table class="ticket-table">
+                            <thead>
+                                <tr>
+                                    <th>Billet</th>
+                                    <th>Comprend</th>
+                                    <th>Prix</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Vendredi</td>
+                                    <td>Accès au festival le vendredi</td>
+                                    <td>18 F</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Samedi</td>
+                                    <td>Accès au festival le samedi</td>
+                                    <td>25 F</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Dimanche</td>
+                                    <td>Accès au festival le dimanche</td>
+                                    <td>20 F</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Pass 3 jours</td>
+                                    <td>Accès complet au week-end</td>
+                                    <td>55 F</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Camping</td>
+                                    <td>Emplacement pour une tente</td>
+                                    <td>10 F</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Bouton volontairement décoratif : aucune alerte -->
+                        <button
+                            class="button-95"
+                            type="button"
+                        >
+                            Acheter un billet
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <!-- BÉNÉVOLES -->
+                <section id="benevoles">
+
+                    <h2>Devenir bénévole</h2>
+
+                    <p>
+                        La Fête du Sable est organisée par des bénévoles.
+                        Montage du site, accueil, buvette, restauration,
+                        signalétique, programmation, camping ou rangement :
+                        il y a toujours une bonne raison de rejoindre
+                        l'équipe.
+                    </p>
+
+                    <div class="panel">
+
+                        <h3>Nous recherchons</h3>
+
+                        <ul class="festival-list">
+                            <li>Des personnes pour l'accueil et les entrées</li>
+                            <li>Des équipes pour la buvette et la restauration</li>
+                            <li>Des aides pour le montage et le démontage</li>
+                            <li>Des responsables de la zone camping</li>
+                            <li>Des figurants pour les animations scéniques</li>
+                        </ul>
+
+                        <br>
+
+                        <!-- Bouton volontairement décoratif : aucune alerte -->
+                        <button
+                            class="button-95"
+                            type="button"
+                        >
+                            Je veux aider
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </article>
+
+        </main>
+
+        <!-- Barre d'état -->
+        <footer class="status-bar">
+            <div class="status-field">
+                Fête du Sable - Site officiel - Périgueux, Dordogne
+            </div>
+
+            <div class="status-field small">
+                640 x 480
+            </div>
+
+            <div class="status-field small">
+                14/07/1996
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        function closeWelcome() {
+            document
+                .getElementById("welcomeModal")
+                .classList
+                .add("hidden");
+        }
+
+        function openWelcome() {
+            document
+                .getElementById("welcomeModal")
+                .classList
+                .remove("hidden");
+        }
+
+        function goToSection(sectionId, button) {
+            var section = document.getElementById(sectionId);
+            var buttons = document.querySelectorAll(
+                ".tool-bar .button-95"
+            );
+
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            button.classList.add("active");
+
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+
+        document
+            .getElementById("welcomeModal")
+            .addEventListener("click", function (event) {
+                if (event.target === this) {
+                    closeWelcome();
+                }
+            });
+    </script>
+
+</body>
+</html>
